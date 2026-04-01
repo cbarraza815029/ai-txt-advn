@@ -1,4 +1,5 @@
 import ollama
+import platform
 from pathlib import Path
 import json
 import ast
@@ -14,7 +15,12 @@ chr_select_content = getattr(chr_obj, "character_prompt")
 #Stores the file location of a character's chat history as a variable
 file = f"chat_hist_{chr_select}.txt"
 file_dir = Path(__file__).parent.resolve()
-file_abs_path = f"{file_dir}{"\\"}{file}"
+dir_slash = ""
+if platform.system().lower() == "windows":
+    dir_slash = "\\" 
+else:
+    dir_slash = "/"
+file_abs_path = f"{file_dir}{dir_slash}{file}"
 
 #Checks if above file exists; if so, continues and if not, it gets created
 if Path(file).is_file():
