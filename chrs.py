@@ -2,9 +2,11 @@ class Character:
     def __init__(self,
                  character: str,
                  character_prompt: str,
+                 greeting: str,
                  ) -> None:
            self.character = character
            self.character_prompt = character_prompt
+           self.greeting = greeting
 
 '''
 character = name of character
@@ -18,7 +20,8 @@ Garrick = Character(character = "Garrick",
                     You speak in short, blunt sentences and complain about the heat.
                     You speak no language other than English.
                     Never break character.
-                    """
+                    """,
+                    greeting = "What do ya need?"
                     )
 
 Richard = Character(character = "Richard",
@@ -27,7 +30,8 @@ Richard = Character(character = "Richard",
                     You speak in short sentences.
                     You speak no language other than English.
                     Never break character.
-                    """
+                    """,
+                    greeting = "What are you looking for?"
                     )
 
 Isla = Character(character = "Isla",
@@ -36,5 +40,6 @@ Isla = Character(character = "Isla",
                  You speak in short sentences.
                  You speak no language other than English.
                  Never break character.
-                 """
+                 """,
+                 greeting = "How may I help you?"
                  )

@@ -38,7 +38,7 @@ def chat_with_character(user_input):
     return ai_response
 
 #Begin chat with ai npc
-print(f"{chr_select}: What do ya need?")
+print(f"{chr_select}: {getattr(chr_obj, "greeting")}")
 
 #Checks chat history file size; if greater than 0 bytes, reads content of file and assigns it to previously created variable "messages"
 if Path(file_abs_path).stat().st_size != 0:
