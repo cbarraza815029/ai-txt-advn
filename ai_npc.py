@@ -19,7 +19,7 @@ dir_slash = ""
 if platform.system().lower() == "windows":
     dir_slash = "\\" 
 else:
-    dir_slash = "/"
+    dir_slash = "/" #For linux systems
 file_abs_path = f"{file_dir}{dir_slash}{file}"
 
 #Checks if above file exists; if so, continues and if not, it gets created
