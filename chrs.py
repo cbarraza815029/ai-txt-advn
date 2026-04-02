@@ -10,7 +10,8 @@ class Character:
 
 '''
 character = name of character
-character_prompt = the prompt followed by the ai model to role play as a character
+character_prompt = the prompt an ai model follows to role play as a character
+greeting = how the NPC starts a conversation
 '''
 
 #List of NPCs
