@@ -38,7 +38,9 @@ messages = [
 #Function that appends the list of dictionaries "messages" with user input and ai npc response; accepts one paramter and returns ai npc response
 def chat_with_character(user_input):
     messages.append({'role': 'user', 'content': user_input})
-    response = ollama.chat(model=vars.ai_model, messages=messages)
+    response = ollama.chat(model=vars.ai_model,
+                           messages=messages,
+                           options={'temperature': 0.1})
     ai_response = response['message']['content']
     messages.append({'role': 'assistant', 'content': ai_response})
     return ai_response
