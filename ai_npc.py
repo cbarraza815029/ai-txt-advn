@@ -5,7 +5,7 @@ import json
 import ast
 
 import chrs
-import vars
+import settings
 
 #Prompt for user to select the character they want to converse with; see list in chrs.py
 chr_select = input("Select character: ").strip()
@@ -38,9 +38,15 @@ messages = [
 #Function that appends the list of dictionaries "messages" with user input and ai npc response; accepts one paramter and returns ai npc response
 def chat_with_character(user_input):
     messages.append({'role': 'user', 'content': user_input})
-    response = ollama.chat(model=vars.ai_model,
+    response = ollama.chat(model=settings.ai_model,
                            messages=messages,
-                           options={'temperature': 0.1})
+                           options={'temperature': settings.ai_temp,
+                                    'num_ctx': settings.ai_num_ctx,
+                                    'repeat_last_n': settings.ai_repeat_last_n,
+                                    'repeat_penalty': settings.ai_repeat_penalty,
+                                    'num_predict': settings.ai_num_predict,
+                                    'top_k': settings.ai_top_k,
+                                    'top_p': settings.ai_top_p})
     ai_response = response['message']['content']
     messages.append({'role': 'assistant', 'content': ai_response})
     return ai_response
