@@ -1,5 +1,3 @@
-import chr_stats
-import weapons
 '''
 this module will calculate damage during battle by taking into consideration weapon, level, buffs, debuffs,
 etc. and pass result on to battle.py

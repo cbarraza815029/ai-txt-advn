@@ -2,7 +2,6 @@ import os
 import platform
 from pathlib import Path
 import json
-import ast
 
 counter_chr_creation = 1
 chr_stats = [
